@@ -1,0 +1,42 @@
+// First we define our sliding window pointers
+
+initilize upperPointer to zero 
+initilize lowerPointer to zero 
+initilize a temporarly empty array of integers
+initilize a second temporarly empty array of integers
+initilize the length of the given array
+initilize an empty Sum int 
+
+// make the condition
+
+while the upperPointer <= the array length:
+    if upperPointer == lowerPointer:
+
+        if array[upperPointer] >= target:
+            temp = [array[upperPointer]]
+            upperPointer ++
+            if lowerPointer < length-1:
+                lowerPointer ++  
+        else if array[upperPointer] < target:
+            if lowerPointer < length:
+                lowerPointer ++
+                
+    if upperPointer != lowerPointer:
+        temp2 = []
+        for i in range from upperPointer to lowerPointer:
+            Sum += array[i]
+            append array[i] to temp2
+            // this will give us the sum of all the number of the array bounded by the window
+        
+        if Sum >= target AND length of temp > length of temp2:
+            temp = temp2
+            upperPointer ++
+            if lowerPointer < length:
+                lowerPointer ++
+            else :
+                upperPointer ++
+        else if Sum < target:
+            if lowerPointer < length:
+                lowerPointer ++
+            else :
+                upperPointer ++
